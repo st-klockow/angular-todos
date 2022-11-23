@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Itodo } from './itodo';
 
 @Component({
   selector: 'app-root',
@@ -13,7 +14,7 @@ export class AppComponent implements OnInit {
     }
   }
   
-  todos = [ 
+  todos: Itodo[] = [ 
     { todo: 'Einkaufen', done: false },
     { todo: 'Lesen', done: false },
     { todo: 'Programmieren', done: true },
