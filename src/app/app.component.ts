@@ -16,13 +16,20 @@ export class AppComponent {
 
   setTodo(event: KeyboardEvent) {
     this.newTodo = (event.target as HTMLInputElement).value;
-    console.log(this.newTodo)
+    console.log(this.newTodo);
   }
 
-  addTodo(){
-    if(this.newTodo.trim() !== ""){
-      this.todos.push({todo: this.newTodo, done: false})
+  addTodo() {
+    if (this.newTodo.trim() !== '') {
+      this.todos.push({ todo: this.newTodo, done: false });
     }
+  }
+
+  countOpenTodos() {
+    const done = this.todos.filter((item) => {
+      return !item.done;
+    });
+    return done;
   }
 
   toggleTodo(index: number) {
